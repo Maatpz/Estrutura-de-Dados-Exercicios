@@ -80,9 +80,9 @@ public class Main {
     public static void main(String[] args) {
         // Estoque estoque = new Estoque();
         
-        // estoque.adicionarProduto(1, "Arroz", 50);
-        // estoque.adicionarProduto(2, "Feijão", 30);
-        // estoque.adicionarProduto(3, "Açúcar", 20);
+        // estoque.adicionarProduto(1, "Arroz", 100);
+        // estoque.adicionarProduto(2, "Feijão", 72);
+        // estoque.adicionarProduto(3, "Açúcar", 27);
         
         // System.out.println("Lista de produtos:");
         // estoque.listarProdutos();
