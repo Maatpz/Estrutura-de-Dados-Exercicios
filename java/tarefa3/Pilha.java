@@ -1,5 +1,7 @@
 package tarefa3;
 
+import java.util.*;
+
 class Pilha {
 
     private int topo;
@@ -9,7 +11,7 @@ class Pilha {
     public Pilha(int capacidade) {
         this.capacidade = capacidade;
         this.elementos = new int[capacidade];
-        this.topo = -1; // Indica pilha vazia
+        this.topo = -1; 
     }
 
     public boolean isEmpty() {
@@ -57,13 +59,51 @@ class Pilha {
 class TestePilha {
 
     public static void main(String[] args) {
-        Pilha pilha = new Pilha(5);
-        pilha.push(10);
-        pilha.push(20);
-        pilha.push(30);
-        pilha.imprimirPilha();
-        System.out.println("Topo da pilha: " + pilha.peek());
-        System.out.println("Removendo: " + pilha.pop());
-        pilha.imprimirPilha();
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite a capacidade da pilha: ");
+        int capacidade = scanner.nextInt();
+        Pilha pilha = new Pilha(capacidade);
+
+        int opcao = 0;
+
+        while (opcao != 5) {
+            System.out.println("\nEscolha uma opção:");
+            System.out.println("1. Adicionar elemento à pilha (push)");
+            System.out.println("2. Remover elemento da pilha (pop)");
+            System.out.println("3. Ver topo da pilha (peek)");
+            System.out.println("4. Imprimir pilha");
+            System.out.println("5. Sair");
+
+            opcao = scanner.nextInt();
+
+            switch (opcao) {
+                case 1:
+                    System.out.print("Digite o valor do elemento a ser adicionado: ");
+                    int valorPush = scanner.nextInt();
+                    pilha.push(valorPush);
+                    break;
+
+                case 2:
+                    System.out.println("Elemento removido: " + pilha.pop());
+                    break;
+
+                case 3:
+                    System.out.println("Topo da pilha: " + pilha.peek());
+                    break;
+
+                case 4:
+                    pilha.imprimirPilha();
+                    break;
+
+                case 5:
+                    System.out.println("Saindo.");
+                    break;
+
+                default:
+                    System.out.println("Opção inválida!");
+            }
+        }
+        scanner.close();
     }
 }
