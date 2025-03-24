@@ -14,7 +14,6 @@ public class ControlaAluno {
         
     }
 
-
     public void exibirMenu() {
         while (true) {
             System.out.println("\nMENU DE OPÇÕES");
